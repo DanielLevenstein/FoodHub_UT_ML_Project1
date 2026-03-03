@@ -2,62 +2,112 @@
 
 ## Project: Python Foundations – FoodHub
 
-### Context
-
-The number of restaurants in New York is increasing day by day. Many students and busy professionals rely on these restaurants due to their hectic lifestyles. Online food delivery services are a great option, providing access to food from their favorite places. 
-
-**FoodHub**, a food aggregator app, connects users with multiple restaurants through a single platform. It manages customer orders, assigns delivery personnel, and collects ratings—all while earning a margin on each order.
-
----
-
-### Objective
-
-You’ve been hired as a Data Scientist at FoodHub. Your task: analyze customer order data to answer key business questions. The goal is to uncover trends that can help improve customer satisfaction and business performance.
-
----
-
 ### Dataset Description
 
 The dataset records various attributes of food orders, including customer ratings, preparation and delivery times, and cuisine types.
 
 **Data Dictionary:**
-- `order_id`: Unique ID of the order  
-- `customer_id`: ID of the customer  
-- `restaurant_name`: Name of the restaurant  
-- `cuisine_type`: Cuisine ordered  
-- `cost_of_the_order`: Cost in USD  
-- `day_of_the_week`: Weekday vs. weekend  
-- `rating`: Customer rating (out of 5)  
-- `food_preparation_time`: Time taken by restaurant (minutes)  
-- `delivery_time`: Time taken by delivery person (minutes)  
+
+- `order_id`: Unique ID of the order
+- `customer_id`: ID of the customer
+- `restaurant_name`: Name of the restaurant
+- `cuisine_type`: Cuisine ordered
+- `cost_of_the_order`: Cost in USD
+- `day_of_the_week`: Weekday vs. weekend
+- `rating`: Customer rating (out of 5)
+- `food_preparation_time`: Time taken by a restaurant (minutes)
+- `delivery_time`: Time taken by delivery person (minutes)
 
 ---
 
-### Key Findings
+## Methodology
 
-#### Cuisine Performance
+In this project I analyzed the delivery data from a fake food delivery app called FoodHub and calculated cuisine performance by a restaurant type and rating.
+
+This project was originally part of a UT school project, but the Discount Coast vs. Total Reach section was added more recently.
+
+### Data Cleaning
+
+The input data for this project had over 700 entries without ratings. For this dataset I have populated those table rows with the mean rating for the whole dataset, which is 4.
+I also maintained a separate data set with only the entries in the original dataset with rating so that I can check my findings with that dataset if needed.
+
+---
+
+### Main Finding
+
+#### Discount Cost vs. Total Reach
+
+In the original project a 20% discount was proposed for the top 3 customers. I later calculated the business effect of expanding that discount out to more customers using the original data.
+
+In this dataset I create an aggregated dataset by customer_id, and order_id, and calculate the value of the proposed discount for each order cutoff number in or dataset.
+
+**Calculated Fields**
+
+- average_order_cost
+- discount_value (by customer and order number)
+- maximum_discount_cost (by order cutoff value
+
+![Discount Cost vs. Total Reach](data/Discount_cost_vs_total_reach.png)
+
+**Figure shows discount cost vs total reach along with discount value per customer**
+
+### Observation
+
+- As the cut of for who is eligible for the discount is lowered, the potential cost of the discount goes up as it affects a larger demographic of customers.
+- If the customer wanted to maximize customer reach while lowering the total cost of the discount program, they could offer the discount to all customers who make, more than 5 purchases.
+
+---
+
+### Additional Findings
+
+**Highest Correlation**
+
+* Application demand is higher on weekends than weeknights.
+* Cuisine Type and rating had a strong correlation.
+* The top-rated cuisines were Indian, Mexican, Japanese
+* The cuisine with the highest average rating is Indian food.
+* The most expensive food is French food.
+
+Cuisine Trends and Restaurant Performance Metrics
+
+**Top Cuisines by Rating**
+
+* Indian
+* Mexican
+* Japanese
+
+**Highest Rated Restaurants**
+
+* Number 1: "Suchi of Gari Tibeca"
+* Number 2: "Blue Ribbon Suchi Bar & Grill"
+* Number 3: "Five Guys Burgers and Fries"
+
+**Top Restaurants by Cuisine Type**
+
+* The top American restaurant is "Five Guys Burgers and Fries"
+* The top Chinese restaurant is "Han Dynasty"
+* The top Indian restaurant is "Tamarind TriBeCa"
+
+**Cuisine Performance**
+
 - Strong correlation between cuisine type and customer ratings
 - Top-rated cuisines: **Indian**, **Mexican**, **Japanese**, **Italian**, **Chinese**
 
-#### Delivery Insights
+**Delivery Insights**
+
 - Orders with delivery times over 60 minutes still maintained a high average rating of **4.21**
 - **Weekends** saw faster delivery times compared to weeknights
 
-#### Revenue
+**Revenue**
+
 - Average revenue per order: **$3.25**
 
----
-
-### Recommendations
+#### Recommendations
 
 1. **Improve Search**: Make it easy for users to filter by price and cuisine type.
 2. **Cuisine of the Week**: Feature top cuisines weekly with discounts to drive engagement.
 3. **Targeted Promotions**: Run special offers for highly rated restaurants like:
-   - The Meatball Shop *(Italian)*
-   - Blue Ribbon Fried Chicken *(American)*
-   - RedFarm Broadway *(Chinese)*
-   - Shake Shack *(American)*
-   - Blue Ribbon Sushi *(Japanese)*
+4. **Loyalty Program** Create a loyalty program for the top customers using the app.
 
 ---
 
@@ -65,27 +115,27 @@ The dataset records various attributes of food orders, including customer rating
 
 #### Overall:
 
-| Restaurant                      | Cuisine   | Avg Rating |
-|--------------------------------|-----------|------------|
-| Sushi of Gari Tribeca          | Japanese  | 4.6        |
-| Blue Ribbon Sushi Bar & Grill  | Japanese  | 4.6        |
-| Five Guys Burgers and Fries    | American  | 4.6        |
-| The Meatball Shop              | Italian   | 4.5        |
-| Han Dynasty                    | Chinese   | 4.4        |
+| Restaurant                    | Cuisine  | Avg Rating |
+| ----------------------------- | -------- | ---------- |
+| Sushi of Gari Tribeca         | Japanese | 4.6        |
+| Blue Ribbon Sushi Bar & Grill | Japanese | 4.6        |
+| Five Guys Burgers and Fries   | American | 4.6        |
+| The Meatball Shop             | Italian  | 4.5        |
+| Han Dynasty                   | Chinese  | 4.4        |
 
 #### Top by Cuisine:
 
-| Cuisine         | Top Restaurant              | Avg Rating |
-|-----------------|-----------------------------|------------|
-| American        | Five Guys                   | 4.34       |
-| Chinese         | Han Dynasty                 | 4.28       |
-| Indian          | Tamarind TriBeCa            | 4.40       |
-| Italian         | The Meatball Shop           | 4.25       |
-| Japanese        | Sushi of Gari Tribeca       | 4.37       |
-| Mediterranean   | Jack's Wife Freda           | 4.32       |
-| Mexican         | Cafe Habana                 | 4.23       |
-| Middle Eastern  | Cafe Mogador                | 4.15       |
-| Southern        | Hill Country Fried Chicken  | 4.36       |
+| Cuisine        | Top Restaurant             | Avg Rating |
+| -------------- | -------------------------- | ---------- |
+| American       | Five Guys                  | 4.34       |
+| Chinese        | Han Dynasty                | 4.28       |
+| Indian         | Tamarind TriBeCa           | 4.40       |
+| Italian        | The Meatball Shop          | 4.25       |
+| Japanese       | Sushi of Gari Tribeca      | 4.37       |
+| Mediterranean  | Jack's Wife Freda          | 4.32       |
+| Mexican        | Cafe Habana                | 4.23       |
+| Middle Eastern | Cafe Mogador               | 4.15       |
+| Southern       | Hill Country Fried Chicken | 4.36       |
 
 ---
 
