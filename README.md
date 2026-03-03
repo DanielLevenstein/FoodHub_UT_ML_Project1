@@ -47,15 +47,13 @@ In this dataset I create an aggregated dataset by customer_id, and order_id, and
 - discount_value (by customer and order number)
 - maximum_discount_cost (by order cutoff value
 
-![Discount Cost vs. Total Reach](data/Discount_cost_vs_total_reach.png)
+![Discount Cost vs. Total Reach](output/Discount_Cost_vs_Total_Reach.png)
 
 **Figure shows discount cost vs total reach along with discount value per customer**
 
-### Observation
+## Recommendations
 
-- As the cut of for who is eligible for the discount is lowered, the potential cost of the discount goes up as it affects a larger demographic of customers.
-- If the customer wanted to maximize customer reach while lowering the total cost of the discount program, they could offer the discount to all customers who make, more than 5 purchases.
-
+- Create a discount for customers who make more than 5 orders on the app. 
 ---
 
 ### Additional Findings
@@ -102,12 +100,11 @@ Cuisine Trends and Restaurant Performance Metrics
 
 - Average revenue per order: **$3.25**
 
-#### Recommendations
+#### Other Recommendations
 
 1. **Improve Search**: Make it easy for users to filter by price and cuisine type.
 2. **Cuisine of the Week**: Feature top cuisines weekly with discounts to drive engagement.
 3. **Targeted Promotions**: Run special offers for highly rated restaurants like:
-4. **Loyalty Program** Create a loyalty program for the top customers using the app.
 
 ---
 
