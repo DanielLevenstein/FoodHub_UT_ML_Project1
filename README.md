@@ -45,16 +45,20 @@ In this dataset I create an aggregated dataset by customer_id, and order_id, and
 
 - average_order_cost
 - discount_value (by customer and order number)
-- maximum_discount_cost (by order cutoff value
+- maximum_discount_cost (by order cutoff value)
 
 ![Discount Cost vs. Total Reach](output/Discount_Cost_vs_Total_Reach.png)
 
-
 **Figure shows discount cost vs total reach along with discount value per customer**
+
+## Observations
+1)	Returning customers spend more per order on the app than less frequent users. 
+2)	Giving all returning users a discount will reach 12% of the total userbase.
+3)	Giving discounts to users who make five more or purchases would cost the company about $250 total.
 
 ## Recommendations
 
-- Create a discount for customers who make more than 5 orders on the app.
+- Offer a discount to all users making five or more orders, use the marketing of the discount to incentivize loyalty among users. 
 
 ---
 
