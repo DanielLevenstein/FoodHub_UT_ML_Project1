@@ -49,16 +49,19 @@ In this dataset I create an aggregated dataset by customer_id, and order_id, and
 
 ![Discount Cost vs. Total Reach](output/Discount_Cost_vs_Total_Reach.png)
 
+
 **Figure shows discount cost vs total reach along with discount value per customer**
 
 ## Recommendations
 
-- Create a discount for customers who make more than 5 orders on the app. 
+- Create a discount for customers who make more than 5 orders on the app.
+
 ---
 
 ### 🏆 Top Restaurants
 
 #### Overall:
+
 
 | Restaurant                    | Cuisine  | Avg Rating |
 | ----------------------------- | -------- | ---------- |
@@ -69,6 +72,7 @@ In this dataset I create an aggregated dataset by customer_id, and order_id, and
 | Han Dynasty                   | Chinese  | 4.4        |
 
 #### Top by Cuisine:
+
 
 | Cuisine        | Top Restaurant             | Avg Rating |
 | -------------- | -------------------------- | ---------- |
@@ -85,6 +89,7 @@ In this dataset I create an aggregated dataset by customer_id, and order_id, and
 ---
 
 ### 🛠️ Tools Used
+
 - Python
 - Pandas, NumPy
 - Seaborn, Matplotlib
