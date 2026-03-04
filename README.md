@@ -44,8 +44,9 @@ In this dataset I create an aggregated dataset by customer_id, and order_id, and
 **Calculated Fields**
 
 - average_order_cost
-- discount_value (by customer and order number)
+- discount_value_per_customer 
 - maximum_discount_cost (by order cutoff value)
+- population_reached (as percentage of total population)
 
 ![Discount Cost vs. Total Reach](output/Discount_Cost_vs_Total_Reach.png)
 
